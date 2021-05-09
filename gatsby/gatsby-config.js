@@ -1,1 +1,25 @@
-// This file is empty, but some people were reporting that it would not start unless they had an empty file. So here it is! You can delete the comment. Or replace it with your favourite shania twain lyrics.
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env' });
+
+module.exports = {
+  siteMetadata: {
+    title: 'The Wonderful World of Dogs',
+    siteUrl: 'https://gatsby.pizza/',
+    description: 'The wonderful world of dogs | dog exercise | dog walking',
+    author: 'Phil Brew',
+  },
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-source-sanity', // Plugin name
+      options: {
+        projectId: 'fm755ymi',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+      },
+    },
+  ],
+};

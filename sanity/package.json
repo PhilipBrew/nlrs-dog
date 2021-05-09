@@ -1,10 +1,10 @@
 {
-  "name": "slicks-slices-backend",
+  "name": "twwod-backend",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Wes Bos <wesbos@gmail.com>",
+  "author": "Phil Brew <philbrew@hotmail.co.uk>",
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint .",

@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "kutp3su7",
+    "projectId": "fm755ymi",
     "dataset": "production"
   },
   "project": {
-    "name": "slicks-slices"
+    "name": "the-wonderful-world-of-dogs"
   },
   "plugins": [
     "@sanity/base",
@@ -26,6 +26,10 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./desk-structure"
     }
   ]
 }
