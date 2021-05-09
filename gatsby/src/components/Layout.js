@@ -1,18 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import 'normalize.css';
+import React from "react";
+import styled from "styled-components";
+import "normalize.css";
 
-import Footer from './Footer';
-import Nav from './Nav';
+import Footer from "./Footer";
+import Nav from "./Nav";
 
-import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
-import stripes from '../assets/images/stripes.svg';
+import GlobalStyles from "../styles/GlobalStyles";
+import Typography from "../styles/Typography";
+import stripes from "../assets/images/stripes.svg";
 
-const Layout = ({ children, data }) => 
-{
-  console.log("DATA------->", data);
-  return(
+const Layout = ({ children }) => (
   <>
     <GlobalStyles />
     <Typography />
@@ -24,7 +21,7 @@ const Layout = ({ children, data }) =>
       </ContentStyles>
     </SiteBorderStyles>
   </>
-)}
+);
 
 export default Layout;
 

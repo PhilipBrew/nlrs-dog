@@ -6,7 +6,7 @@ var plugins = [{
       options: {"plugins":[],"displayName":true,"fileName":true,"minify":true,"namespace":"","transpileTemplateLiterals":true,"pure":false},
     },{
       plugin: require('/Users/philbrew/Documents/repos/nlrs-dog/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
-      options: {"plugins":[],"projectId":"fm755ymi","dataset":"production","watchMode":true,"token":"sktbGHLcM4VDQpOHsVk72im0ei66ixF5VMHeVi85MocbsvkvBUAR53ekUSLRe2GXQFkiNxcWk3eVhkQmrz4dohmo59Q6Dt0gohYnpwOvhqI4gX3LGSX8kr6MUEqVx7BHnTHZ5fxVyY8PZMVN43VbyPnb6U9wii9xo0h2llus5aciSe3Y2Yj1"},
+      options: {"plugins":[],"projectId":"fm755ymi","dataset":"production","watchMode":true},
     },{
       plugin: require('/Users/philbrew/Documents/repos/nlrs-dog/gatsby/gatsby-ssr'),
       options: {"plugins":[]},

@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import sanityClient from '@sanity/client';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import sanityClient from "@sanity/client";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import styled from "styled-components";
 
-import { graphql } from 'gatsby';
-import SEO from '../components/SEO';
-import StyledForm from '../styles/FormStyles';
-import { SubmitButton } from '../components/Buttons';
-import Loader from '../components/Loader';
-import client from '../utils/sanityClient';
+import { graphql } from "gatsby";
+import SEO from "../components/SEO";
+import StyledForm from "../styles/FormStyles";
+import { SubmitButton } from "../components/Buttons";
+import Loader from "../components/Loader";
+import client from "../utils/sanityClient";
 
-import useForm from '../hooks/useForm';
-import { useAppContext } from '../providers/AppProvider';
-import { defaultOrderForm } from '../hooks/defaults';
-import orderTimes from '../utils/orderTimes';
-import { timeStringBuilder } from '../utils/functions';
+import useForm from "../hooks/useForm";
+import { useAppContext } from "../providers/AppProvider";
+import { defaultOrderForm } from "../hooks/defaults";
+import orderTimes from "../utils/orderTimes";
+import { timeStringBuilder } from "../utils/functions";
 
 const OrderPage = ({ data: { allSanityOrder } }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -31,27 +31,20 @@ const OrderPage = ({ data: { allSanityOrder } }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('ORDER ------->', order);
-
     client.create(order).then((res) => {
-      console.log('RES ------>', res);
+      console.log("RES ------>", res);
     });
   };
 
   const handleDateSelect = (date) => {
     setSelectedDate(date);
-    console.log('ORDER DATE TIMES ------->', orderDateTimes);
-    const todayOrderDateTime = orderDateTimes.filter(({ time }) => {
-      console.log('TIME ------->', new Date(time).toDateString());
-      console.log('TODAY ------>', new Date(date).toDateString());
-      return new Date(time).toDateString() === new Date(date).toDateString();
-    });
-
-    // console.log('ORDERS ----->', orderDateTimes);
-    // console.log('TODAY ------>', todayOrderDateTime);
+    const todayOrderDateTime = orderDateTimes.filter(
+      ({ time }) =>
+        new Date(time).toDateString() === new Date(date).toDateString()
+    );
 
     const times = todayOrderDateTime.map((order) =>
-      new Date(Object.values(order)).toLocaleTimeString('en-GB')
+      new Date(Object.values(order)).toLocaleTimeString("en-GB")
     );
 
     let availableTimes = orderTimes;
@@ -65,13 +58,12 @@ const OrderPage = ({ data: { allSanityOrder } }) => {
   };
 
   const handleTimeSelect = (event) => {
-    const hours = event.target.value.split(':')[0];
+    const hours = event.target.value.split(":")[0];
     selectedDate.setHours(hours);
     selectedDate.setMinutes(0);
     selectedDate.setSeconds(0);
     const selectedDateTime = selectedDate.toISOString();
     setUtcDateTime(selectedDateTime);
-    console.log('DATETIME ------->', selectedDateTime);
     setOrder({
       ...order,
       time: selectedDateTime,
@@ -84,7 +76,6 @@ const OrderPage = ({ data: { allSanityOrder } }) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      console.log('ORDER HERE ------>', order);
       setOrder({
         ...order,
         vaccination: reader.result,

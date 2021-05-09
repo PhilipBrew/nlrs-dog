@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import sha256 from 'js-sha256';
-import { navigate } from 'gatsby-link';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import sha256 from "js-sha256";
+import { navigate } from "gatsby-link";
 
-import StyledForm from '../../styles/FormStyles';
-import { SubmitButton } from '../Buttons';
-import { useAppContext } from '../../providers/AppProvider';
-import useForm from '../../hooks/useForm';
-import client from '../../utils/sanityClient';
-import Loader from '../Loader';
+import StyledForm from "../../styles/FormStyles";
+import { SubmitButton } from "../Buttons";
+import { useAppContext } from "../../providers/AppProvider";
+import useForm from "../../hooks/useForm";
+import client from "../../utils/sanityClient";
+import Loader from "../Loader";
 
 const LoginForm = () => {
   const { setActiveLoginTab } = useAppContext();
@@ -16,10 +16,10 @@ const LoginForm = () => {
   const [loading, setLoading] = useState(false);
 
   const form = {
-    name: '',
-    email: '',
-    password: '',
-    verifyPassword: '',
+    name: "",
+    email: "",
+    password: "",
+    verifyPassword: "",
   };
 
   const { values, updateValue } = useForm(form);
@@ -31,21 +31,20 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/account');
+    navigate("/account");
     setLoading(true);
     if (passwordMatch) {
       const doc = {
-        _type: 'users',
+        _type: "users",
         name,
         email,
         password: sha256(password),
       };
 
       client.create(doc).then(({ res }) => {
-        console.log('RES ------>', res);
         setLoading(false);
         document.cookie = `user=${res._id}`;
-        navigate('account');
+        navigate("account");
         /**
          * email: "philbrew@hotmail.co.uk"
           name: "Phil"
@@ -112,8 +111,8 @@ const LoginForm = () => {
               disabled={!passwordMatch}
             />
             <p>
-              Forgot your password?{' '}
-              <ForgotPassword onClick={() => setActiveLoginTab('Reset')}>
+              Forgot your password?{" "}
+              <ForgotPassword onClick={() => setActiveLoginTab("Reset")}>
                 Reset it here
               </ForgotPassword>
             </p>

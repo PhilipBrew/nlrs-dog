@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { BsChevronDown } from 'react-icons/bs';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { BsChevronDown } from "react-icons/bs";
 
-import StyledForm from '../../styles/FormStyles';
-import UserDogsFormItem from './UsersDogsFormItem';
-import { SubmitButton } from '../Buttons';
+import StyledForm from "../../styles/FormStyles";
+import UserDogsFormItem from "./UsersDogsFormItem";
+import { SubmitButton } from "../Buttons";
 
 const UserDogsForm = ({ dogs }) => {
   const [opened, setOpened] = useState(false);
-  const [newName, setNewName] = useState('');
+  const [newName, setNewName] = useState("");
 
   const [dogImgSrc, setDogImgSrc] = useState(false);
   const [vaccImgSrc, setVaccImgSrc] = useState(false);
@@ -16,7 +16,7 @@ const UserDogsForm = ({ dogs }) => {
   const handleFileChange = (event, type) => {
     const input = event.target;
 
-    const imageType = input.files[0].type.split('image/').pop();
+    const imageType = input.files[0].type.split("image/").pop();
 
     const reader = new FileReader();
     reader.onload = function () {
@@ -26,8 +26,6 @@ const UserDogsForm = ({ dogs }) => {
         type: imageType,
         image: dataURL,
       };
-
-      console.log('BODY ------->', body);
       // TODO: Send this to serverless function for upload...
     };
     reader.readAsDataURL(input.files[0]);
@@ -38,11 +36,9 @@ const UserDogsForm = ({ dogs }) => {
     // setLoading(true);
     const body = {
       name: newName,
-      picture: '',
-      vaccination: '',
+      picture: "",
+      vaccination: "",
     };
-
-    console.log('BODY ------>', body);
   };
   return (
     <StyledForm onSubmit={(e) => handleSubmit(e)}>
@@ -81,7 +77,7 @@ const UserDogsForm = ({ dogs }) => {
                   mt={30}
                   text="Add New Image"
                   accept="image/png, image/jpeg"
-                  onChange={(e) => handleFileChange(e, 'dog')}
+                  onChange={(e) => handleFileChange(e, "dog")}
                 />
               </DogImgContainer>
               <DogImgContainer>
@@ -146,9 +142,9 @@ const StyledTitle = styled.div`
   cursor: pointer;
 `;
 const FormContent = styled.div`
-  max-height: ${({ open }) => (open ? '100%' : '0')};
+  max-height: ${({ open }) => (open ? "100%" : "0")};
   overflow: hidden;
-  padding: ${({ open }) => (open ? '25px 16px;' : '0 16px;')};
+  padding: ${({ open }) => (open ? "25px 16px;" : "0 16px;")};
   transition: all 0.3s ease-out;
 `;
 const AccordionRow = styled.div`
