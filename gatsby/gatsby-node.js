@@ -1,5 +1,4 @@
 import path from "path";
-xw;
 
 const turnPoliciesIntoPages = async ({ graphql, actions }) => {
   const policyTemplate = path.resolve("./src/templates/PolicyPage.js");
