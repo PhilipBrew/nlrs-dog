@@ -6,19 +6,12 @@ import logoSrc from '../assets/images/logo.png';
 const Nav = () => (
   <NavStyles>
     <ul>
+      <li />
+      <li />
       <li>
         <Link to="/">
           <Image src={logoSrc} alt="logo" />
         </Link>
-      </li>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/faq">FAQ</Link>
-      </li>
-      <li>
-        <Link to="/order">Book</Link>
       </li>
     </ul>
   </NavStyles>
@@ -32,6 +25,7 @@ const Image = styled.img`
 
 const NavStyles = styled.nav`
   margin-bottom: 3rem;
+  align-items: center;
   ul {
     margin: 0;
     padding: 0;

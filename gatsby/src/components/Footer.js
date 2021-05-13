@@ -29,7 +29,7 @@ const Footer = () => {
           </span>
         </Left>
         <Right>
-          {termsEnabled && (
+          {/* {termsEnabled && (
             <StyledLink to="/terms-conditions">
               Terms &amp; Conditions
             </StyledLink>
@@ -39,7 +39,7 @@ const Footer = () => {
           )}
           {cookieEnabled && (
             <StyledLink to="/cookie-policy">Cookie Policy</StyledLink>
-          )}
+          )} */}
         </Right>
       </StyledFooter>
     </>
