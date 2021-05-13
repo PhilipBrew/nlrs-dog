@@ -1,22 +1,24 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
-dotenv.config({ path: ".env" });
+dotenv.config({ path: '.env' });
 
-module.exports = {
+export default {
+  pathPrefix: '/pizza',
   siteMetadata: {
-    title: "The Wonderful World of Dogs",
-    siteUrl: "https://thewonderfulworldofdogs.co.uk/",
-    description: "The wonderful world of dogs | dog exercise | dog walking",
-    author: "Phil Brew",
+    title: `Slicks Slices`,
+    siteUrl: 'https://gatsby.pizza',
+    description: 'The best pizza place in Hamilton!',
+    twitter: '@slicksSlices',
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
-      resolve: "", // Plugin name
+      // this is the name of the plugin you are adding
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: "fm755ymi",
-        dataset: "production",
+        projectId: '0jfvvkkd',
+        dataset: 'production',
         watchMode: true,
         token: process.env.SANITY_TOKEN,
       },

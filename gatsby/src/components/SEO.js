@@ -1,23 +1,24 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ children, location, description, title, image }) => {
+export default function SEO({ children, location, description, title, image }) {
   const { site } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
           description
+          twitter
         }
       }
     }
   `);
   return (
-    <Helmet titleTemplate={`%s | ${site.siteMetadata.title}`}>
+    <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
       <html lang="en" />
       <title>{title}</title>
-      {/* Favicon */}
+      {/* Fav Icons */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="alternate icon" href="/favicon.ico" />
       {/* Meta Tags */}
@@ -29,7 +30,7 @@ const SEO = ({ children, location, description, title, image }) => {
       <meta property="og:image" content={image || '/logo.svg'} />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
-        property="og:site_name"
+        propery="og:site_name"
         content={site.siteMetadata.title}
         key="ogsitename"
       />
@@ -37,6 +38,4 @@ const SEO = ({ children, location, description, title, image }) => {
       {children}
     </Helmet>
   );
-};
-
-export default SEO;
+}
