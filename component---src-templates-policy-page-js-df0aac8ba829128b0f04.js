@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{U1Cq:function(n,e,o){"use strict";o.r(e);var t=o("q1tI"),a=o.n(t);e.default=function(n){var e=n.data;return console.log("POLICY DATA --------\x3e",e),a.a.createElement("h1",null,"Hello World")}}}]);
-//# sourceMappingURL=component---src-templates-policy-page-js-df0aac8ba829128b0f04.js.map
