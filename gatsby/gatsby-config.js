@@ -13,7 +13,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     {
-      resolve: "gatsby-source-sanity", // Plugin name
+      resolve: "", // Plugin name
       options: {
         projectId: "fm755ymi",
         dataset: "production",

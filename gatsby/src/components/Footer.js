@@ -1,38 +1,19 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const Footer = () => {
-  const { allSanitySettings } = useStaticQuery(graphql`
-    query siteSettings {
-      allSanitySettings {
-        nodes {
-          name
-          code
-          termsEnabled
-          privacyEnabled
-          cookieEnabled
-        }
-      }
-    }
-  `);
-  const { nodes: siteSettings } = allSanitySettings;
-  const { termsEnabled, privacyEnabled, cookieEnabled } = siteSettings[0];
-
-  return (
-    <>
-      <Divider />
-      <StyledFooter>
-        <Left>
-          <span>
-            &copy; The Wonderful World of Dogs {new Date().getFullYear()}
-          </span>
-        </Left>
-        <Right />
-      </StyledFooter>
-    </>
-  );
-};
+const Footer = () => (
+  <>
+    <Divider />
+    <StyledFooter>
+      <Left>
+        <span>
+          &copy; The Wonderful World of Dogs {new Date().getFullYear()}
+        </span>
+      </Left>
+      <Right />
+    </StyledFooter>
+  </>
+);
 
 export default Footer;
 
@@ -49,11 +30,6 @@ const Divider = styled.div`
   margin-top: 2rem;
 `;
 const Left = styled.div``;
-const StyledLink = styled(Link)`
-  &:not(:first-child) {
-    padding-top: 1rem;
-  }
-`;
 const Right = styled.div`
   display: flex;
   flex-direction: column;
