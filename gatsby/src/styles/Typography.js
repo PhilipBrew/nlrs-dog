@@ -1,20 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
 
-import font from '../assets/fonts/frenchfries.woff';
+import fontStandard from '../assets/fonts/Roboto-Regular.ttf';
+import fontHeading from '../assets/fonts/RobotoCondensed-Regular.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
-    font-family: FrenchFries;
-    src: url(${font});
+    font-family: Roboto;
+    src: url(${fontStandard});
+  }
+  @font-@font-face {
+    font-family: RobotoCondensed;
+    src: url(${fontHeading});
   }
   html {
-    font-family: FrenchFries, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
   }
   p, li {
     letter-spacing: 0.5px;
   }
   h1,h2,h3,h4,h5,h6 {
+    font-family: RobotoCondensed;
     font-weight: normal;
     margin: 0;
   }

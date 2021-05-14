@@ -1,14 +1,16 @@
-import { createGlobalStyle } from 'styled-components';
-import bg from '../assets/images/bg.svg';
-import stripes from '../assets/images/stripes.svg';
+import { createGlobalStyle } from "styled-components";
+import bg from "../assets/bg.svg";
+import stripes from "../assets/stripes.svg";
 
 const GlobalStyles = createGlobalStyle`
   :root {
     --red: #FF4949;
+    --red-darkened: #e50000;
     --black: #2E2E2E;
     --yellow: #ffc600;
     --white: #fff;
     --grey: #efefef;
+    --grey-darkened: #d7d7d7;
   }
   html {
     background-image: url(${bg});
@@ -28,6 +30,9 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     background: var(--red);
+    &:hover {
+      background: var(--red-darkened);
+    }
     color: white;
     border: 0;
     padding: 0.6rem 1rem;

@@ -1,23 +1,42 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
-import Logo from "./Logo";
+
+import logoSrc from "../assets/logo.png";
+
+const Nav = () => (
+  <NavStyles>
+    <ul>
+      <li />
+      <li />
+      <li>
+        <a href="/">
+          <Image src={logoSrc} alt="logo" />
+        </a>
+      </li>
+    </ul>
+  </NavStyles>
+);
+export default Nav;
+
+const Image = styled.img`
+  width: 200px;
+  height: 200px;
+`;
 
 const NavStyles = styled.nav`
-  /* margin-bottom: 3rem; */
-  .logo {
-    transform: translateY(-25%);
-  }
+  margin-bottom: 3rem;
+  align-items: center;
   ul {
     margin: 0;
     padding: 0;
     text-align: center;
     list-style: none;
+    margin-top: -6rem;
+
     display: grid;
-    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 2rem;
     align-items: center;
-    margin-top: -6rem;
   }
   li {
     --rotate: -2deg;
@@ -39,54 +58,11 @@ const NavStyles = styled.nav`
   a {
     font-size: 3rem;
     text-decoration: none;
-    display: block;
     &:hover {
       color: var(--red);
     }
-    @media (max-width: 800px) {
-      font-size: 2rem;
-    }
-    /* &[aria-current='page'] {
+    &[aria-current="page"] {
       color: var(--red);
-    } */
-  }
-  @media (max-width: 600px) {
-    --columns: 4;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--grey);
-    padding-bottom: 2rem;
-    ul {
-      grid-template-rows: auto auto;
-      grid-template-columns: repeat(var(--columns), 1fr);
-      justify-items: center;
     }
-    .logo-item {
-      order: 0;
-      grid-column: 1 / -1;
-    }
-    .logo {
-      transform: none;
-    }
-  }
-  @media (max-width: 500px) {
-    --columns: 2;
   }
 `;
-
-export default function Nav() {
-  return (
-    <NavStyles>
-      <ul>
-        <li />
-        <li />
-        <li className="logo-item">
-          <Link to="/">
-            <Logo />
-          </Link>
-        </li>
-        <li />
-        <li />
-      </ul>
-    </NavStyles>
-  );
-}
