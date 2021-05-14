@@ -76,10 +76,6 @@ const GlobalStyles = createGlobalStyle`
     background-size: 1500px;
   }
 
-  img {
-    max-width: 100%;
-  }
-
   .tilt {
     transform: rotate(-2deg);
     position: relative;
