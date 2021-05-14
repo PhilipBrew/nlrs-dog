@@ -20,7 +20,8 @@ export default Nav;
 
 const Image = styled.img`
   width: 200px;
-  height: 200px;
+  height: auto;
+  max-width: auto;
 `;
 
 const NavStyles = styled.nav`
