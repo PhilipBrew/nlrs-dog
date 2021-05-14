@@ -10,7 +10,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Typography from "./styles/Typography";
 import stripes from "./assets/stripes.svg";
 
-const App = ({ children }) => (
+const App = () => (
   <>
     <GlobalStyles />
     <Typography />

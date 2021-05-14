@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import { Helmet } from "react-helmet";
 
@@ -7,8 +8,8 @@ const SEO = ({ children, location, description, title, image }) => {
       <html lang="en" />
       <title>{title}</title>
       {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="alternate icon" href="/favicon.ico" />
+      <a rel="icon" type="image/svg+xml" href="/favicon.svg" alt="" />
+      <a rel="alternate icon" href="/favicon.ico" alt="" />
       {/* Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />
